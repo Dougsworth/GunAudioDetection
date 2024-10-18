@@ -1,17 +1,20 @@
 "use client";
 
 import { useState, useRef } from "react";
-import JamaicaMap from "./JamaicaMap";
+import dynamic from "next/dynamic";
 import { Dialog } from "@headlessui/react";
+
+// Dynamically import JamaicaMap without SSR
+const JamaicaMap = dynamic(() => import("./JamaicaMap"), { ssr: false });
 
 const AudioRecorder = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [detectionResult, setDetectionResult] = useState(null);
   const [isMapOpen, setIsMapOpen] = useState(false);
+  const [gunshotLocation, setGunshotLocation] = useState(null); // State for gunshot location
   const mediaRecorderRef = useRef(null);
   const audioChunks = useRef([]);
-  const canvasRef = useRef(null); // Initialize canvasRef
 
   const startRecording = async () => {
     try {
@@ -29,21 +32,19 @@ const AudioRecorder = () => {
         const formData = new FormData();
         formData.append("audio", audioBlob, "audio.wav");
 
-        const response = await fetch("http://localhost:5001/detect-gunshot", {
-          method: "POST",
-          body: formData,
-        });
-
-        const result = await response.json();
-        setDetectionResult(result);
-
-        // Shorter delay before resetting processing state
+        // Simulate gunshot detection instead of making an API call
         setTimeout(() => {
-          setIsProcessing(false);
-          if (result.message === "Gunshot detected!") {
-            setIsMapOpen(true);
-          }
-        }, 5000); // 2 seconds delay for processing
+          // Simulated detection result
+          const simulatedResult = {
+            message: "Gunshot detected",
+            filename: "audio.wav",
+          };
+
+          setDetectionResult(simulatedResult);
+          setGunshotLocation({ lat: 18.0, lng: -77.0 }); // Example coordinates
+          setIsProcessing(false); // Stop processing
+          setIsMapOpen(true); // Open map dialog
+        }, 3000); // Simulate processing time
       };
 
       mediaRecorderRef.current.start();
@@ -64,35 +65,28 @@ const AudioRecorder = () => {
     }
   };
 
-    return (
-      <div className="flex flex-col items-center">
-        {isRecording && (
-          <h3 className="mt-4 text-lg font-semibold">Recording in Progress...</h3>
-        )}
+  return (
+    <div className="flex flex-col items-center">
+      {isRecording && (
+        <h3 className="mt-4 text-lg font-semibold">Recording in Progress...</h3>
+      )}
 
-        {isProcessing && (
-          <div className="mt-4">
-            <h3 className="text-lg font-semibold">Processing audio...</h3>
-            <div className="loader">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+      {isProcessing && (
+        <div className="mt-4">
+          <h3 className="text-lg font-semibold">Processing audio...</h3>
+          <div className="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
-        )}
-
-        <canvas
-        ref={canvasRef} // Use canvasRef here
-        width={300}
-        height={100}
-        className="mt-4"
-      ></canvas>
+        </div>
+      )}
 
       {!isProcessing && (
         <button
           onClick={isRecording ? stopRecording : startRecording}
-          className="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out mt-2 mb-16" // Added bottom margin
+          className="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out mt-2 mb-16"
         >
           {isRecording ? "Stop Recording" : "Start Recording"}
         </button>
@@ -122,7 +116,9 @@ const AudioRecorder = () => {
               Gunshot Detected
             </Dialog.Title>
             <div className="h-[500px] w-full">
-              <JamaicaMap gunshotLocation={{ lat: 18.0, lng: -77.0 }} />
+              {gunshotLocation && (
+                <JamaicaMap gunshotLocation={gunshotLocation} />
+              )}
             </div>
             <button
               onClick={() => {

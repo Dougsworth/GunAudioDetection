@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 
 const JamaicaMap = ({ gunshotLocation }) => {
   useEffect(() => {
-    const L = require("leaflet"); // Moved inside useEffect
-
+    // Check if running in the browser environment
     if (typeof window !== "undefined") {
       // Create the map and center it over Jamaica
       const map = L.map("map").setView([18.1096, -77.2975], 8);
@@ -42,17 +42,17 @@ const JamaicaMap = ({ gunshotLocation }) => {
         marker
           .bindPopup(
             `
-            <div style="text-align: center; padding: 8px;">
-              <strong style="color: #ff4757; font-size: 18px;">Gunshot Detected</strong>
-              <br />
-              <strong>Coordinates:</strong> ${gunshotLocation.lat.toFixed(
-                2
-              )}, ${gunshotLocation.lng.toFixed(2)}<br/>
-              <strong>Accuracy:</strong> High<br/>
-              <strong>Time:</strong> ${new Date().toLocaleString()}<br/>
-              <strong>Details:</strong> Gunshot detected in your area. Stay alert!
-            </div>
-            `
+          <div style="text-align: center; padding: 8px;">
+            <strong style="color: #ff4757; font-size: 18px;">Gunshot Detected</strong>
+            <br />
+            <strong>Coordinates:</strong> ${gunshotLocation.lat.toFixed(
+              2
+            )}, ${gunshotLocation.lng.toFixed(2)}<br/>
+            <strong>Accuracy:</strong> High<br/>
+            <strong>Time:</strong> ${new Date().toLocaleString()}<br/>
+            <strong>Details:</strong> Gunshot detected in your area. Stay alert!
+          </div>
+          `
           )
           .openPopup();
       }
@@ -66,4 +66,5 @@ const JamaicaMap = ({ gunshotLocation }) => {
   return <div id="map" className="w-full h-full"></div>;
 };
 
+// Disable SSR for this component
 export default dynamic(() => Promise.resolve(JamaicaMap), { ssr: false });
