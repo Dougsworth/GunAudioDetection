@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
+import L from "leaflet"; // Use import for Leaflet
 
 const JamaicaMap = ({ gunshotLocation }) => {
   useEffect(() => {
