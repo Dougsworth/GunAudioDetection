@@ -84,4 +84,6 @@ Inspired by the original work on GunShotDetector by the team at the JAIA Hackath
 Douglas Byfield
 Joel
 David
-Check out the original project here.
+Check out the original project in the link below:
+https://github.com/RizPur/GunShotDetector
+
