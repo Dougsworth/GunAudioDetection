@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
+import L from "leaflet"; // Use import for Leaflet
 
 const JamaicaMap = ({ gunshotLocation }) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const L = require("leaflet");
-
       // Create the map and center it over Jamaica
       const map = L.map("map").setView([18.1096, -77.2975], 8);
 
