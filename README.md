@@ -87,3 +87,366 @@ David
 Check out the original project in the link below:
 https://github.com/RizPur/GunShotDetector
 
+<<<<<<< HEAD
+=======
+```# GunAudioDetection
+
+```
+gun-detection-audio
+├─ README.md
+├─ backend
+│  ├─ server.js
+│  └─ uploads
+└─ frontend
+   ├─ .eslintrc.json
+   ├─ .next
+   │  ├─ app-build-manifest.json
+   │  ├─ build-manifest.json
+   │  ├─ cache
+   │  │  ├─ swc
+   │  │  │  └─ plugins
+   │  │  │     └─ v7_macos_aarch64_0.106.15
+   │  │  └─ webpack
+   │  │     ├─ client-development
+   │  │     │  ├─ 0 2.gz_
+   │  │     │  ├─ 0.pack.gz
+   │  │     │  ├─ 1 2.gz_
+   │  │     │  ├─ 1.pack.gz
+   │  │     │  ├─ 10.pack.gz
+   │  │     │  ├─ 11.pack.gz
+   │  │     │  ├─ 12.pack.gz
+   │  │     │  ├─ 13.pack.gz
+   │  │     │  ├─ 14.pack.gz
+   │  │     │  ├─ 15.pack.gz
+   │  │     │  ├─ 16.pack.gz
+   │  │     │  ├─ 17.pack.gz
+   │  │     │  ├─ 18.pack.gz
+   │  │     │  ├─ 19.pack.gz
+   │  │     │  ├─ 2 2.gz_
+   │  │     │  ├─ 2.pack.gz
+   │  │     │  ├─ 20.pack.gz
+   │  │     │  ├─ 21.pack.gz
+   │  │     │  ├─ 3 2.gz_
+   │  │     │  ├─ 3.pack.gz
+   │  │     │  ├─ 4 2.pack.gz
+   │  │     │  ├─ 4.pack.gz
+   │  │     │  ├─ 5.pack.gz
+   │  │     │  ├─ 6.pack.gz
+   │  │     │  ├─ 7 2.gz_
+   │  │     │  ├─ 7.pack.gz
+   │  │     │  ├─ 8.pack.gz
+   │  │     │  ├─ 9.pack.gz
+   │  │     │  ├─ index 2.pack.gz
+   │  │     │  ├─ index.pack.gz
+   │  │     │  ├─ index.pack.gz 2.gz_
+   │  │     │  └─ index.pack.gz.old
+   │  │     ├─ client-development-fallback
+   │  │     │  ├─ 0.pack.gz
+   │  │     │  ├─ 1.pack.gz
+   │  │     │  ├─ index.pack.gz
+   │  │     │  └─ index.pack.gz.old
+   │  │     └─ server-development
+   │  │        ├─ 0 2.pack.gz
+   │  │        ├─ 0.pack.gz
+   │  │        ├─ 1.pack.gz
+   │  │        ├─ 10 2.pack.gz
+   │  │        ├─ 10.pack.gz
+   │  │        ├─ 11 2.pack.gz
+   │  │        ├─ 11.pack.gz
+   │  │        ├─ 12 2.pack.gz
+   │  │        ├─ 12.pack.gz
+   │  │        ├─ 13.pack.gz
+   │  │        ├─ 14.pack.gz
+   │  │        ├─ 2.pack.gz
+   │  │        ├─ 3.pack.gz
+   │  │        ├─ 4 2.pack.gz
+   │  │        ├─ 4.pack.gz
+   │  │        ├─ 5 2.pack.gz
+   │  │        ├─ 5.pack.gz
+   │  │        ├─ 6.pack.gz
+   │  │        ├─ 7.pack.gz
+   │  │        ├─ 8 2.gz_
+   │  │        ├─ 8.pack.gz
+   │  │        ├─ 9.pack.gz
+   │  │        ├─ index 2.pack.gz
+   │  │        ├─ index.pack.gz
+   │  │        ├─ index.pack.gz 2.old
+   │  │        └─ index.pack.gz.old
+   │  ├─ package.json
+   │  ├─ react-loadable-manifest.json
+   │  ├─ server
+   │  │  ├─ app
+   │  │  │  ├─ favicon.ico
+   │  │  │  │  └─ route.js
+   │  │  │  ├─ page.js
+   │  │  │  └─ page_client-reference-manifest.js
+   │  │  ├─ app-paths-manifest.json
+   │  │  ├─ interception-route-rewrite-manifest.js
+   │  │  ├─ middleware-build-manifest.js
+   │  │  ├─ middleware-manifest.json
+   │  │  ├─ middleware-react-loadable-manifest.js
+   │  │  ├─ next-font-manifest.js
+   │  │  ├─ next-font-manifest.json
+   │  │  ├─ pages
+   │  │  │  ├─ _app.js
+   │  │  │  ├─ _document.js
+   │  │  │  ├─ _error.js
+   │  │  │  └─ api
+   │  │  │     └─ detect-gunshot.js
+   │  │  ├─ pages-manifest.json
+   │  │  ├─ server-reference-manifest.js
+   │  │  ├─ server-reference-manifest.json
+   │  │  ├─ vendor-chunks
+   │  │  │  ├─ @headlessui.js
+   │  │  │  ├─ @swc.js
+   │  │  │  ├─ framer-motion.js
+   │  │  │  ├─ leaflet.js
+   │  │  │  └─ next.js
+   │  │  ├─ webpack-api-runtime.js
+   │  │  └─ webpack-runtime.js
+   │  ├─ static
+   │  │  ├─ chunks
+   │  │  │  ├─ app
+   │  │  │  │  ├─ layout.js
+   │  │  │  │  └─ page.js
+   │  │  │  ├─ app-pages-internals.js
+   │  │  │  ├─ main-app.js
+   │  │  │  ├─ main.js
+   │  │  │  ├─ pages
+   │  │  │  │  ├─ _app.js
+   │  │  │  │  └─ _error.js
+   │  │  │  ├─ polyfills.js
+   │  │  │  ├─ react-refresh.js
+   │  │  │  └─ webpack.js
+   │  │  ├─ css
+   │  │  │  └─ app
+   │  │  │     ├─ layout.css
+   │  │  │     └─ page.css
+   │  │  ├─ development
+   │  │  │  ├─ _buildManifest.js
+   │  │  │  └─ _ssgManifest.js
+   │  │  └─ media
+   │  │     ├─ 4473ecc91f70f139-s.p.woff
+   │  │     ├─ 463dafcda517f24f-s.p.woff
+   │  │     ├─ layers-2x.9859cd12.png
+   │  │     ├─ layers.ef6db872.png
+   │  │     └─ marker-icon.d577052a.png
+   │  ├─ trace
+   │  └─ types
+   │     ├─ app
+   │     │  ├─ layout.ts
+   │     │  └─ page.ts
+   │     └─ package.json
+   ├─ README.md
+   ├─ app
+   │  ├─ about
+   │  │  └─ page.tsx
+   │  ├─ case-study
+   │  │  └─ page.tsx
+   │  ├─ components
+   │  │  ├─ AudioRecorder.js
+   │  │  ├─ JamaicaMap.js
+   │  │  └─ Navbar.js
+   │  ├─ favicon.ico
+   │  ├─ fonts
+   │  │  ├─ GeistMonoVF.woff
+   │  │  └─ GeistVF.woff
+   │  ├─ globals.css
+   │  ├─ layout.tsx
+   │  ├─ page.tsx
+   │  └─ test
+   │     └─ page.tsx
+   ├─ next-env.d.ts
+   ├─ next.config.mjs
+   ├─ package-lock.json
+   ├─ package.json
+   ├─ pages
+   │  └─ api
+   │     └─ detect-gunshot.js
+   ├─ postcss.config.mjs
+   ├─ public
+   │  └─ alert.png
+   ├─ tailwind.config.ts
+   └─ tsconfig.json
+
+```
+```
+gun-detection-audio
+├─ README.md
+├─ backend
+│  ├─ server.js
+│  └─ uploads
+└─ frontend
+   ├─ .eslintrc.json
+   ├─ .next
+   │  ├─ app-build-manifest.json
+   │  ├─ build-manifest.json
+   │  ├─ cache
+   │  │  ├─ swc
+   │  │  │  └─ plugins
+   │  │  │     └─ v7_macos_aarch64_0.106.15
+   │  │  └─ webpack
+   │  │     ├─ client-development
+   │  │     │  ├─ 0 2.gz_
+   │  │     │  ├─ 0.pack.gz
+   │  │     │  ├─ 1 2.gz_
+   │  │     │  ├─ 1.pack.gz
+   │  │     │  ├─ 10.pack.gz
+   │  │     │  ├─ 11.pack.gz
+   │  │     │  ├─ 12.pack.gz
+   │  │     │  ├─ 13.pack.gz
+   │  │     │  ├─ 14.pack.gz
+   │  │     │  ├─ 15.pack.gz
+   │  │     │  ├─ 16.pack.gz
+   │  │     │  ├─ 17.pack.gz
+   │  │     │  ├─ 18.pack.gz
+   │  │     │  ├─ 19.pack.gz
+   │  │     │  ├─ 2 2.gz_
+   │  │     │  ├─ 2.pack.gz
+   │  │     │  ├─ 20.pack.gz
+   │  │     │  ├─ 21.pack.gz
+   │  │     │  ├─ 3 2.gz_
+   │  │     │  ├─ 3.pack.gz
+   │  │     │  ├─ 4 2.pack.gz
+   │  │     │  ├─ 4.pack.gz
+   │  │     │  ├─ 5.pack.gz
+   │  │     │  ├─ 6.pack.gz
+   │  │     │  ├─ 7 2.gz_
+   │  │     │  ├─ 7.pack.gz
+   │  │     │  ├─ 8.pack.gz
+   │  │     │  ├─ 9.pack.gz
+   │  │     │  ├─ index 2.pack.gz
+   │  │     │  ├─ index.pack.gz
+   │  │     │  ├─ index.pack.gz 2.gz_
+   │  │     │  └─ index.pack.gz.old
+   │  │     ├─ client-development-fallback
+   │  │     │  ├─ 0.pack.gz
+   │  │     │  ├─ 1.pack.gz
+   │  │     │  ├─ index.pack.gz
+   │  │     │  └─ index.pack.gz.old
+   │  │     └─ server-development
+   │  │        ├─ 0 2.pack.gz
+   │  │        ├─ 0.pack.gz
+   │  │        ├─ 1.pack.gz
+   │  │        ├─ 10 2.pack.gz
+   │  │        ├─ 10.pack.gz
+   │  │        ├─ 11 2.pack.gz
+   │  │        ├─ 11.pack.gz
+   │  │        ├─ 12 2.pack.gz
+   │  │        ├─ 12.pack.gz
+   │  │        ├─ 13.pack.gz
+   │  │        ├─ 14.pack.gz
+   │  │        ├─ 2.pack.gz
+   │  │        ├─ 3.pack.gz
+   │  │        ├─ 4 2.pack.gz
+   │  │        ├─ 4.pack.gz
+   │  │        ├─ 5 2.pack.gz
+   │  │        ├─ 5.pack.gz
+   │  │        ├─ 6.pack.gz
+   │  │        ├─ 7.pack.gz
+   │  │        ├─ 8 2.gz_
+   │  │        ├─ 8.pack.gz
+   │  │        ├─ 9.pack.gz
+   │  │        ├─ index 2.pack.gz
+   │  │        ├─ index.pack.gz
+   │  │        ├─ index.pack.gz 2.old
+   │  │        └─ index.pack.gz.old
+   │  ├─ package.json
+   │  ├─ react-loadable-manifest.json
+   │  ├─ server
+   │  │  ├─ app
+   │  │  │  ├─ favicon.ico
+   │  │  │  │  └─ route.js
+   │  │  │  ├─ page.js
+   │  │  │  └─ page_client-reference-manifest.js
+   │  │  ├─ app-paths-manifest.json
+   │  │  ├─ interception-route-rewrite-manifest.js
+   │  │  ├─ middleware-build-manifest.js
+   │  │  ├─ middleware-manifest.json
+   │  │  ├─ middleware-react-loadable-manifest.js
+   │  │  ├─ next-font-manifest.js
+   │  │  ├─ next-font-manifest.json
+   │  │  ├─ pages
+   │  │  │  ├─ _app.js
+   │  │  │  ├─ _document.js
+   │  │  │  ├─ _error.js
+   │  │  │  └─ api
+   │  │  │     └─ detect-gunshot.js
+   │  │  ├─ pages-manifest.json
+   │  │  ├─ server-reference-manifest.js
+   │  │  ├─ server-reference-manifest.json
+   │  │  ├─ vendor-chunks
+   │  │  │  ├─ @headlessui.js
+   │  │  │  ├─ @swc.js
+   │  │  │  ├─ framer-motion.js
+   │  │  │  ├─ leaflet.js
+   │  │  │  └─ next.js
+   │  │  ├─ webpack-api-runtime.js
+   │  │  └─ webpack-runtime.js
+   │  ├─ static
+   │  │  ├─ chunks
+   │  │  │  ├─ app
+   │  │  │  │  ├─ layout.js
+   │  │  │  │  └─ page.js
+   │  │  │  ├─ app-pages-internals.js
+   │  │  │  ├─ main-app.js
+   │  │  │  ├─ main.js
+   │  │  │  ├─ pages
+   │  │  │  │  ├─ _app.js
+   │  │  │  │  └─ _error.js
+   │  │  │  ├─ polyfills.js
+   │  │  │  ├─ react-refresh.js
+   │  │  │  └─ webpack.js
+   │  │  ├─ css
+   │  │  │  └─ app
+   │  │  │     ├─ layout.css
+   │  │  │     └─ page.css
+   │  │  ├─ development
+   │  │  │  ├─ _buildManifest.js
+   │  │  │  └─ _ssgManifest.js
+   │  │  └─ media
+   │  │     ├─ 4473ecc91f70f139-s.p.woff
+   │  │     ├─ 463dafcda517f24f-s.p.woff
+   │  │     ├─ layers-2x.9859cd12.png
+   │  │     ├─ layers.ef6db872.png
+   │  │     └─ marker-icon.d577052a.png
+   │  ├─ trace
+   │  └─ types
+   │     ├─ app
+   │     │  ├─ layout.ts
+   │     │  └─ page.ts
+   │     └─ package.json
+   ├─ README.md
+   ├─ app
+   │  ├─ about
+   │  │  └─ page.tsx
+   │  ├─ case-study
+   │  │  └─ page.tsx
+   │  ├─ components
+   │  │  ├─ AudioRecorder.js
+   │  │  ├─ JamaicaMap.js
+   │  │  └─ Navbar.js
+   │  ├─ favicon.ico
+   │  ├─ fonts
+   │  │  ├─ GeistMonoVF.woff
+   │  │  └─ GeistVF.woff
+   │  ├─ globals.css
+   │  ├─ layout.tsx
+   │  ├─ page.tsx
+   │  └─ test
+   │     └─ page.tsx
+   ├─ next-env.d.ts
+   ├─ next.config.mjs
+   ├─ package-lock.json
+   ├─ package.json
+   ├─ pages
+   │  └─ api
+   │     └─ detect-gunshot.js
+   ├─ postcss.config.mjs
+   ├─ public
+   │  └─ alert.png
+   ├─ tailwind.config.ts
+   └─ tsconfig.json
+
+```
+>>>>>>> 35eeda3 (Removed backend and prepared for Vercel deployment)

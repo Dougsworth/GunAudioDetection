@@ -4,9 +4,9 @@ import "leaflet/dist/leaflet.css";
 
 const JamaicaMap = ({ gunshotLocation }) => {
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const L = require("leaflet");
+    const L = require("leaflet"); // Moved inside useEffect
 
+    if (typeof window !== "undefined") {
       // Create the map and center it over Jamaica
       const map = L.map("map").setView([18.1096, -77.2975], 8);
 
